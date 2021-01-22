@@ -13,7 +13,7 @@ class ViewController: UIViewController , WKNavigationDelegate {
     
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "cnn.com"]
+    var websites = ["apple.com", "hackingwithswift.com"]
 
     override func loadView() {
         webView = WKWebView()
@@ -23,7 +23,7 @@ class ViewController: UIViewController , WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+     
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         progressView = UIProgressView(progressViewStyle: .default)
@@ -32,8 +32,10 @@ class ViewController: UIViewController , WKNavigationDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
-
-        toolbarItems = [progressButton, spacer, refresh]
+        let goBack = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
+        
+        toolbarItems = [progressButton, spacer, goBack , goForward , refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -82,6 +84,14 @@ class ViewController: UIViewController , WKNavigationDelegate {
                     return
                 }
             }
+        }
+        
+        let urlString = url?.absoluteString ?? "Unknown"
+        
+        if urlString != "about:blank" {
+            let ac = UIAlertController(title: "Unauthorized", message: "Website \"\(urlString)\" is not part of authorized websites", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(ac, animated: true)
         }
 
         decisionHandler(.cancel)
