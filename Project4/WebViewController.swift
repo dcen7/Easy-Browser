@@ -9,12 +9,13 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController , WKNavigationDelegate {
+class WebViewController: UIViewController , WKNavigationDelegate {
     
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "hackingwithswift.com"]
-
+    var websites: [String]!
+    var currentWebsite: Int!
+    
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
@@ -23,7 +24,14 @@ class ViewController: UIViewController , WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard websites != nil && currentWebsite != nil else {
+            print("Websites are not set")
+            navigationController?.popViewController(animated: true)
+            return
+        }
      
+        navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         progressView = UIProgressView(progressViewStyle: .default)
@@ -40,7 +48,7 @@ class ViewController: UIViewController , WKNavigationDelegate {
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + websites[currentWebsite])!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
         

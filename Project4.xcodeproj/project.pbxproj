@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		FB5BE47324449333008B254C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5BE47224449333008B254C /* AppDelegate.swift */; };
 		FB5BE47524449333008B254C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5BE47424449333008B254C /* SceneDelegate.swift */; };
-		FB5BE47724449333008B254C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5BE47624449333008B254C /* ViewController.swift */; };
+		FB5BE47724449333008B254C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5BE47624449333008B254C /* WebViewController.swift */; };
 		FB5BE47A24449333008B254C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5BE47824449333008B254C /* Main.storyboard */; };
 		FB5BE47C24449336008B254C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5BE47B24449336008B254C /* Assets.xcassets */; };
 		FB5BE47F24449336008B254C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5BE47D24449336008B254C /* LaunchScreen.storyboard */; };
+		FB811F8025BB3E08004E338A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB811F7F25BB3E08004E338A /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB5BE46F24449333008B254C /* Project4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5BE47224449333008B254C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB5BE47424449333008B254C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB5BE47624449333008B254C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB5BE47624449333008B254C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		FB5BE47924449333008B254C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB5BE47B24449336008B254C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB5BE47E24449336008B254C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB5BE48024449336008B254C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB811F7F25BB3E08004E338A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				FB5BE47224449333008B254C /* AppDelegate.swift */,
 				FB5BE47424449333008B254C /* SceneDelegate.swift */,
-				FB5BE47624449333008B254C /* ViewController.swift */,
+				FB5BE47624449333008B254C /* WebViewController.swift */,
 				FB5BE47824449333008B254C /* Main.storyboard */,
 				FB5BE47B24449336008B254C /* Assets.xcassets */,
 				FB5BE47D24449336008B254C /* LaunchScreen.storyboard */,
 				FB5BE48024449336008B254C /* Info.plist */,
+				FB811F7F25BB3E08004E338A /* MainViewController.swift */,
 			);
 			path = Project4;
 			sourceTree = "<group>";
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB5BE47724449333008B254C /* ViewController.swift in Sources */,
+				FB5BE47724449333008B254C /* WebViewController.swift in Sources */,
+				FB811F8025BB3E08004E338A /* MainViewController.swift in Sources */,
 				FB5BE47324449333008B254C /* AppDelegate.swift in Sources */,
 				FB5BE47524449333008B254C /* SceneDelegate.swift in Sources */,
 			);
